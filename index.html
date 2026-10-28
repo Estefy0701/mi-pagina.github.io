@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Máquina Expendedora de Productos de Higiene</title>
+  <link rel="stylesheet" href="styleee.css">
+</head>
+
+<body>
+  <header>
+    <a href="https://tecnica1avellaneda.com.ar/web/" target="_blank" rel="noopener" title="Ir al campus de la escuela" class="logo-link">
+      <img class="logo" src="joseingenieros.png" alt="Logo de la escuela José Ingenieros">
+    </a>
+    <div>
+      <div class="school-title">Escuela de Educación Secundaria Técnica N°1 "José Ingenieros"</div>
+      <div>Proyecto de Programación e Informática</div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <span class="badge">Informe Técnico</span>
+      <h1>Máquina Expendedora de Productos de Higiene</h1>
+      <p>
+        Sistema de Control Automatizado con Arduino Uno, botones, motores DC y puente H.
+      </p>
+      <nav>
+        <a href="#datos-proyecto">Datos del Proyecto</a>
+        <a href="#resumen">Resumen del Proyecto</a>
+        <a href="#objetivos">Objetivos</a>
+        <a href="#requerimientos">Requerimientos</a>
+        <a href="#arquitectura">Arquitectura del Hardware / Pinout</a>
+        <a href="#codigo">Código Fuente</a>
+        <a href="#manual">Manual de Usuario</a>
+        <a href="#integrantes">Integrantes</a>
+      </nav>
+    </div>
+  </section>
+
+  <main>
+    <section id="datos-proyecto">
+      <h2 class="section-title">1. Portada e Introducción</h2>
+      <div class="section-line"></div>
+      <div class="card">
+        <h3>Datos del Proyecto</h3>
+        <ul>
+          <li><strong>Proyecto:</strong> Máquina Expendedora de Productos de Higiene</li>
+          <li><strong>Curso / Grado:</strong> 7mo Programación, 7mo Informática</li>
+          <li><strong>Materia:</strong> Evaluación de Proyectos / Modelos y Sistemas</li>
+          <li><strong>Ubicación del Laboratorio:</strong> E.E.S.T N°1 José Ingenieros</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="resumen">
+      <h2 class="section-title">Resumen del Proyecto</h2>
+      <div class="section-line"></div>
+      <div class="card">
+        <p>
+          El proyecto consiste en el diseño y desarrollo de un prototipo de máquina expendedora
+          automática de productos de higiene femenina, utilizando un Arduino Uno como sistema
+          principal de control.
+        </p>
+        <p>
+          La máquina está diseñada para permitir que el usuario seleccione un producto mediante
+          botones. Una vez realizada la selección, el Arduino procesa la señal recibida y
+          activa el motor correspondiente, utilizando un módulo puente H para controlar su
+          funcionamiento. El motor acciona un mecanismo que desplaza el producto y permite su
+          salida de manera automática.
+        </p>
+        <p>
+          El sistema busca ser una propuesta económica, sencilla y funcional, que pueda ser
+          utilizada como modelo para facilitar el acceso a productos de higiene femenina en
+          lugares como escuelas, instituciones u otros espacios públicos.
+        </p>
+        <p>
+          Además, el proyecto permite aplicar conocimientos de programación, electrónica y
+          automatización, integrando componentes de entrada, procesamiento y salida en un mismo
+          sistema. De esta manera, se demuestra cómo una placa Arduino puede utilizarse para
+          desarrollar soluciones tecnológicas destinadas a resolver necesidades de la vida
+          cotidiana.
+        </p>
+      </div>
+    </section>
+
+    <section id="objetivos">
+      <h2 class="section-title">Objetivos</h2>
+      <div class="section-line"></div>
+      <div class="card">
+        <h3>Objetivo General</h3>
+        <p>
+          Diseñar y desarrollar un prototipo de máquina expendedora automática de productos de
+          higiene femenina, utilizando Arduino, botones y motores, capaz de entregar un producto
+          seleccionado de manera automática, sencilla y controlada.
+        </p>
+        <h3>Objetivos Específicos</h3>
+        <ul>
+          <li>Implementar un Arduino Uno como unidad principal de control del sistema.</li>
+          <li>Utilizar botones como medio de interacción entre el usuario y la máquina.</li>
+          <li>Programar el Arduino para detectar las diferentes selecciones realizadas.</li>
+          <li>Controlar motores de corriente continua mediante módulos puente H.</li>
+          <li>Diseñar un mecanismo que permita desplazar y entregar los productos de forma automática.</li>
+          <li>Integrar correctamente los componentes electrónicos y la programación para obtener un sistema funcional.</li>
+          <li>Aplicar conocimientos de programación, electrónica y automatización en un proyecto práctico.</li>
+          <li>Desarrollar una alternativa de bajo costo que pueda facilitar el acceso a productos de higiene femenina en distintos espacios.</li>
+          <li>Comprobar el funcionamiento del prototipo y detectar posibles mejoras para futuras versiones.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="requerimientos">
+      <h2 class="section-title">2. Requerimientos de Hardware y Software</h2>
+      <div class="section-line"></div>
+      
+      <div class="card">
+        <h3>Componentes de Hardware</h3>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Hardware</th>
+                <th>Modelo / Valor</th>
+                <th>Cantidad</th>
+                <th>Función Principal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Microcontrolador</td>
+                <td>Arduino UNO</td>
+                <td>1</td>
+                <td>Procesamiento central de datos y control de I/O</td>
+              </tr>
+              <tr>
+                <td>Pila Externa/Bateria</td>
+                <td>Beston 650 Mah 9v</td>
+                <td>1</td>
+                <td>Energía externa para motores</td>
+              </tr>
+              <tr>
+                <td>Pulsador</td>
+                <td>PBS-11A/PBS-11B/PBS-33B</td>
+                <td>2</td>
+                <td>Envío de señales para la detección de una acción manual</td>
+              </tr>
+              <tr>
+                <td>Motor DC</td>
+                <td>-</td>
+                <td>2</td>
+                <td>Conversión de energía eléctrica a corriente continua en movimiento mecánico de rotación</td>
+              </tr>
+              <tr>
+                <td>Actuador Sonoro/zumbador</td>
+                <td>Buzzer Pasivo</td>
+                <td>1</td>
+                <td>Emisión de alertas auditivas según umbrales</td>
+              </tr>
+              <tr>
+                <td>Diodo LED Difuso 5mm</td>
+                <td>Azul/Naranja</td>
+                <td>6</td>
+                <td>Indicadores luminosos de estado</td>
+              </tr>
+              <tr>
+                <td>Puente H</td>
+                <td>LD89N</td>
+                <td>1</td>
+                <td>Controlar el sentido de giro y velocidad de hasta dos motores DC</td>
+              </tr>
+              <tr>
+                <td>Protoboard</td>
+                <td>830 puntos (mediana)</td>
+                <td>1</td>
+                <td>Base para interconexión y pruebas de circuito</td>
+              </tr>
+              <tr>
+                <td>Cables de Conexión</td>
+                <td>Cable de alimentación Arduino</td>
+                <td>1</td>
+                <td>Transmisión de señales y alimentación</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top: 20px;">
+        <h3>Herramientas de Software</h3>
+        <ul>
+          <li><strong>Entorno de Desarrollo (IDE):</strong> Arduino IDE v2.x.</li>
+          <li><strong>Diseño y Diagramación de Circuitos:</strong> Tinkercad Circuits.</li>
+          <li><strong>Monitorización Serie:</strong> Serial Begin integrado de Arduino IDE.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="arquitectura">
+      <h2 class="section-title">3. Arquitectura del Hardware (Circuito)</h2>
+      <div class="section-line"></div>
+      <div class="card">
+        <h3>Tabla de Mapeo de Pines (Pinout)</h3>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Componente</th>
+                <th>Pin del Componente</th>
+                <th>Pin de Arduino</th>
+                <th>Tipo de Señal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Botón de toallitas</td>
+                <td>Un Terminal</td>
+                <td>D2</td>
+                <td>Digital Entrada</td>
+              </tr>
+              <tr>
+                <td>Botón de protectores diarios</td>
+                <td>Un Terminal</td>
+                <td>D8</td>
+                <td>Digital Entrada</td>
+              </tr>
+              <tr>
+                <td>Led_T Amarillo</td>
+                <td>Ánodo (+)</td>
+                <td>D3</td>
+                <td>Digital Salida</td>
+              </tr>
+              <tr>
+                <td>Led_P Azul</td>
+                <td>Ánodo (+)</td>
+                <td>D4</td>
+                <td>Digital Salida</td>
+              </tr>
+              <tr>
+                <td>Buzzer</td>
+                <td>(+)</td>
+                <td>D12</td>
+                <td>Digital Salida</td>
+              </tr>
+              <tr>
+                <td>Puente H L298N</td>
+                <td>IN1</td>
+                <td>D6</td>
+                <td>Digital Salida</td>
+              </tr>
+              <tr>
+                <td>Puente H L298N</td>
+                <td>IN2</td>
+                <td>D7</td>
+                <td>Digital Salida</td>
+              </tr>
+              <tr>
+                <td>Puente H L298N</td>
+                <td>ENA</td>
+                <td>D5</td>
+                <td>Digital Salida / PWM</td>
+              </tr>
+              <tr>
+                <td>Puente H L298N</td>
+                <td>IN3</td>
+                <td>D9</td>
+                <td>Digital Salida</td>
+              </tr>
+              <tr>
+                <td>Puente H L298N</td>
+                <td>IN4</td>
+                <td>D10</td>
+                <td>Digital Salida</td>
+              </tr>
+              <tr>
+                <td>Puente H L298N</td>
+                <td>ENB</td>
+                <td>D11</td>
+                <td>Digital Salida / PWM</td>
+              </tr>
+              <tr>
+                <td>Comunicación con Python</td>
+                <td>TX / RX</td>
+                <td>USB</td>
+                <td>Comunicación Serie</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="codigo">
+      <h2 class="section-title">Código Fuente</h2>
+      <div class="section-line"></div>
+      <div class="card">
+        <p>Imágenes del código fuente desarrollado para el Arduino.</p>
+        <img class="modal-img" src="codigo_fuente_1.jpg" alt="Código Fuente del Proyecto 1">
+        <img class="modal-img" src="codigo_fuente_2.jpg" alt="Código Fuente del Proyecto 2" style="margin-top: 20px;">
+        <img class="modal-img" src="codigo_fuente_3.jpg" alt="Código Fuente del Proyecto 3" style="margin-top: 20px;">
+        <img class="modal-img" src="codigo_fuente_4.jpg" alt="Código Fuente del Proyecto 4" style="margin-top: 20px;">
+        <img class="modal-img" src="codigo_fuente_5.jpg" alt="Código Fuente del Proyecto 5" style="margin-top: 20px;">
+        <img class="modal-img" src="codigo_fuente_6.jpg" alt="Código Fuente del Proyecto 6" style="margin-top: 20px;">
+      </div>
+    </section>
+
+    <section id="manual">
+      <h2 class="section-title">Manual de Usuario</h2>
+      <div class="section-line"></div>
+      <div class="card">
+        <h3>1. Introducción y Propósito del Sistema</h3>
+        <p>
+          La Máquina Expendedora de Productos de Higiene Femenina es un sistema automatizado
+          diseñado para facilitar el acceso rápido, sencillo y autónomo a insumos de higiene
+          personal (toallitas y protectores diarios) en espacios educativos e institucionales.
+        </p>
+
+        <h3>2. Requisitos Previos y Verificación Inicial</h3>
+        <ul>
+          <li>Comprobar la conexión eléctrica de la batería de 9V para motores y la conexión del puerto USB/Arduino al sistema principal.</li>
+          <li>Verificar que los LEDs indicadores y las luces del módulo estén encendidos en estado de reposo/standby.</li>
+        </ul>
+
+        <h3>3. Guía de Uso Paso a Paso (Interacción del Usuario)</h3>
+        <ol>
+          <li><strong>Paso 1:</strong> Identificar el producto a seleccionar (Toallitas con Botón T o Protectores Diarios con Botón P).</li>
+          <li><strong>Paso 2:</strong> Presionar una sola vez el pulsador correspondiente.</li>
+          <li><strong>Paso 3:</strong> Respuesta del sistema:
+            <ul>
+              <li><strong>Si HAY STOCK:</strong> El LED indicador correspondiente se encenderá y el motor despachará el producto en el depósito de salida.</li>
+              <li><strong>Si NO HAY STOCK:</strong> Se emitirá una señal sonora de alerta (Buzzer) avisando que el producto no está disponible.</li>
+            </ul>
+          </li>
+          <li><strong>Paso 4:</strong> Retirar el producto dispensado.</li>
+        </ol>
+
+        <h3>4. Señales del Sistema (Luces y Sonidos)</h3>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Indicador</th>
+                <th>Tipo</th>
+                <th>Estado / Condición</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>LED Amarillo (Led_T)</td>
+                <td>Visual</td>
+                <td>Encendido</td>
+              </tr>
+              <tr>
+                <td>LED Azul (Led_P)</td>
+                <td>Visual</td>
+                <td>Encendido</td>
+              </tr>
+              <tr>
+                <td>Buzzer</td>
+                <td>Sonoro</td>
+                <td>Intervalos continuos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>5. Mantenimiento y Resolución de Problemas para el Operador</h3>
+        <ul>
+          <li><strong>¿Qué hacer si no dispensa el producto?</strong> Comprobar la alineación del mecanismo helicoidal/empujador y verificar el nivel de carga de la batería de 9V que alimenta los motores.</li>
+          <li><strong>¿Qué hacer si el sistema no responde al pulsar un botón?</strong> Verificar la conexión del cable USB de comunicación serie con el servidor Python y confirmar que el programa de control se encuentra activo.</li>
+          <li><strong>¿Cómo recargar el stock de los compartimientos de productos?</strong> Abrir el gabinete de almacenamiento, colocar las unidades de toallitas y/o protectores en los canales correspondientes asegurando su correcta orientación, y actualizar el conteo en el sistema de gestión.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="integrantes">
+      <h2 class="section-title">Integrantes</h2>
+      <div class="section-line"></div>
+      <div class="team">
+        <div class="member">Solange Sejas</div>
+        <div class="member">Macarena Correa</div>
+        <div class="member">Natalia Hipólito</div>
+        <div class="member">Francisco Vazquez</div>
+        <div class="member">Thiago Pacheco</div>
+        <div class="member">Estefania Cretella</div>
+        <div class="member">Thiago Gómez</div>
+        <div class="member">Dylan Vallejos</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <strong>E.E.S.T N°1 "José Ingenieros"</strong><br>
+  </footer>
+
+  <button type="button" id="scrollTop" class="scroll-top" aria-label="Volver arriba">&uarr;</button>
+
+  <script>
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 250) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+
+</html>

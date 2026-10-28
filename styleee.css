@@ -1,0 +1,298 @@
+    :root {
+      --azul: #172b75;
+      --azul-claro: #3155b8;
+      --celeste: #eaf2ff;
+      --amarillo: #ffd83d;
+      --texto: #243047;
+      --blanco: #ffffff;
+    }
+
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texto);
+      background: linear-gradient(180deg, #f5f8ff 0%, #ffffff 55%, #eef3ff 100%);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--blanco);
+      border-bottom: 4px solid var(--amarillo);
+      padding: 18px 6%;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 3px 15px rgba(0,0,0,.08);
+    }
+
+    .logo {
+      width: 125px;
+      height: 125px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .logo-link {
+      display: inline-block;
+      border-radius: 12px;
+      transition: .25s;
+    }
+
+    .logo-link:hover {
+      transform: scale(1.06);
+      box-shadow: 0 6px 18px rgba(23,43,117,.2);
+    }
+
+    .school-title {
+      color: var(--azul);
+      font-size: 1.05rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .hero {
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 75px 20px;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(255,216,61,.28), transparent 28%),
+        linear-gradient(135deg, #172b75, #3155b8);
+      color: white;
+    }
+
+    .hero-content { max-width: 900px; }
+
+    .badge {
+      display: inline-block;
+      background: var(--amarillo);
+      color: #18234f;
+      padding: 7px 18px;
+      border-radius: 999px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 6vw, 4.2rem);
+      line-height: 1.05;
+      margin: 0 0 20px;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 760px;
+      margin: auto;
+      opacity: .95;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    nav a {
+      color: var(--azul);
+      background: white;
+      text-decoration: none;
+      padding: 10px 17px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    main {
+      width: min(1100px, 90%);
+      margin: 55px auto;
+    }
+
+    section {
+      margin-bottom: 55px;
+      scroll-margin-top: 170px;
+    }
+
+    .section-title {
+      color: var(--azul);
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .section-line {
+      width: 70px;
+      height: 5px;
+      background: var(--amarillo);
+      border-radius: 10px;
+      margin-bottom: 24px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 30px rgba(23,43,117,.10);
+      border: 1px solid #e4e9f5;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .mini-card {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      border-top: 5px solid var(--azul-claro);
+      box-shadow: 0 6px 22px rgba(23,43,117,.09);
+    }
+
+    .mini-card h3 { color: var(--azul); margin-top: 0; }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 22px 14px;
+      background: var(--celeste);
+      border-radius: 14px;
+      font-weight: bold;
+    }
+
+    .number {
+      width: 42px;
+      height: 42px;
+      margin: 0 auto 10px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--azul);
+      color: white;
+      font-weight: bold;
+    }
+
+    .modal-img {
+      display: block;
+      max-width: 100%;
+      max-height: 70vh;
+      margin: 15px auto 10px;
+      border-radius: 10px;
+      border: 2px solid #dfe6f5;
+    }
+
+    .table-container {
+      overflow-x: auto;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 0.95rem;
+    }
+
+    .data-table thead {
+      background: var(--azul);
+      color: white;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #d5def9;
+    }
+
+    .data-table tbody tr:nth-child(even) {
+      background: #f8faff;
+    }
+
+    .data-table tbody tr:hover {
+      background: #eef2ff;
+    }
+
+    .team {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .member {
+      background: white;
+      border: 1px solid #e1e6f2;
+      border-radius: 12px;
+      padding: 15px 18px;
+      font-weight: bold;
+    }
+
+    .member::before {      
+      margin-right: 10px;
+    }
+
+    .scroll-top {
+      position: fixed;
+      left: 25px;
+      bottom: 35px;
+      width: 52px;
+      height: 52px;
+      border: none;
+      border-radius: 50%;
+      background: var(--azul);
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 500;
+      box-shadow: 0 5px 18px rgba(23,43,117,.35);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      transition: .25s;
+    }
+
+    .scroll-top.show { display: flex; }
+
+    .scroll-top:hover {
+      background: var(--azul-claro);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(23,43,117,.4);
+    }
+
+    @media (max-width: 560px) {
+      .scroll-top { left: 18px; bottom: 25px; width: 46px; height: 46px; }
+    }
+
+    footer {
+      background: var(--azul);
+      color: white;
+      text-align: center;
+      padding: 28px 20px;
+      margin-top: 70px;
+    }
+
+    @media (max-width: 800px) {
+      header { position: relative; }
+      .cards, .flow { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      header { flex-direction: column; text-align: center; }
+      .logo { width: 105px; height: 105px; }
+      .cards, .flow, .team { grid-template-columns: 1fr; }
+      main { width: 92%; }
+      .card { padding: 22px; }
+    }
